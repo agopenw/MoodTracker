@@ -1,4 +1,4 @@
-package com.arthur.myapplication.View;
+package com.arthur.myapplication.VerticalView;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

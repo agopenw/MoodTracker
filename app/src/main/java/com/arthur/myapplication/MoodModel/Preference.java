@@ -1,11 +1,9 @@
-package com.arthur.myapplication.Model;
+package com.arthur.myapplication.MoodModel;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import org.joda.time.LocalDate;
-
-import java.util.prefs.Preferences;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -53,5 +51,8 @@ public class Preference {
 
     public void setNotePref(String note){
         getPreferences().edit().putString(MOOD_NOTE, note).apply();
+    }
+
+    private void updatePrefs(SharedPreferences preferences) {
     }
 }

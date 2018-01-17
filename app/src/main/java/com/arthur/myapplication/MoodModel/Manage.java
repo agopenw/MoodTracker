@@ -1,19 +1,19 @@
-package com.arthur.myapplication.Model;
+package com.arthur.myapplication.MoodModel;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.ArrayList;
 import java.io.FileOutputStream;
+import java.util.Collections;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-import static com.arthur.myapplication.Model.Mood.moodDayComparator;
+import static com.arthur.myapplication.MoodModel.Mood.moodDayComparator;
 
-public class Serialize {
+public class Manage {
     private FileInputStream fis;
     private FileOutputStream fos;
     private ObjectOutputStream mOutputStream;

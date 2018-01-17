@@ -1,4 +1,4 @@
-package com.arthur.myapplication.Model;
+package com.arthur.myapplication.MoodModel;
 
 import java.io.Serializable;
 import java.util.Comparator;
@@ -48,4 +48,7 @@ public class Mood implements Serializable {
             return moodDay1 - moodDay2;
         }
     };
+
+    public static void fromString(String moodString) {
+    }
 }

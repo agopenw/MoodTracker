@@ -1,4 +1,4 @@
-package com.arthur.myapplication.Controller;
+package com.arthur.myapplication.Actions;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,19 +7,18 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.arthur.myapplication.View.CustomAdapter;
+import com.arthur.myapplication.VerticalView.Adapter;
 import com.arthur.myapplication.R;
-import com.arthur.myapplication.Model.Mood;
-import com.arthur.myapplication.Model.Serialize;
+import com.arthur.myapplication.MoodModel.Mood;
+import com.arthur.myapplication.MoodModel.Manage;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import java.util.List;
+
 
 public class HistoryActivity extends AppCompatActivity {
 
@@ -31,8 +30,10 @@ public class HistoryActivity extends AppCompatActivity {
     private ObjectOutputStream mOutputStream;
     private ListAdapter mAdapter;
     private ListView mListView;
-    private Serialize ser;
+    private Manage ser;
     private TextView mTextView;
+    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +44,11 @@ public class HistoryActivity extends AppCompatActivity {
             mFolder.mkdir();
         }
         moodFile = new File(mFolder.getAbsolutePath() + "/moodLog1.dat");
-        ser = new Serialize();
+        ser = new Manage();
         moodLog = ser.deserialize(moodFile);
 
         if(!moodLog.isEmpty()){
-            mAdapter = new CustomAdapter(this, moodLog);
+            mAdapter = new Adapter(this, moodLog);
             mListView = (ListView)findViewById(R.id.history_listview);
             mListView.setAdapter(mAdapter);
         } else {

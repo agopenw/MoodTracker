@@ -1,27 +1,25 @@
-package com.arthur.myapplication.View;
+package com.arthur.myapplication.VerticalView;
 
 import android.content.Context;
 import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.arthur.myapplication.R;
 
 
-public class CustomSwipeAdapter extends PagerAdapter {
+public class SwipeAdapter extends PagerAdapter {
     private int[] image_resources = {R.drawable.smiley_sad, R.drawable.smiley_disappointed, R.drawable.smiley_normal, R.drawable.smiley_happy, R.drawable.smiley_super_happy};
     private String[] background_color = {"#ffde3c50", "#ff9b9b9b", "#a5468ad9", "#ffb8e986", "#fff9ec4f"};
     private Context ctx;
     private LayoutInflater mLayoutInflater;
 
-    public CustomSwipeAdapter(Context ctx){
+    public SwipeAdapter(Context ctx){
         this.ctx = ctx;
     }
 

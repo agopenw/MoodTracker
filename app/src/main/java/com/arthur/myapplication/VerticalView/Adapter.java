@@ -1,6 +1,8 @@
-package com.arthur.myapplication.View;
+package com.arthur.myapplication.VerticalView;
+
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.support.annotation.NonNull;
@@ -16,15 +18,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.arthur.myapplication.Model.Mood;
+import com.arthur.myapplication.MoodModel.Mood;
 import com.arthur.myapplication.R;
 
+
 import java.lang.reflect.Constructor;
-import java.util.Calendar;
 import java.util.List;
 
 
-public class CustomAdapter extends ArrayAdapter<Mood>{
+public class Adapter extends ArrayAdapter<Mood>{
 
     private int rowWidth, width, deviceWidth, height, deviceHeight, moodPos, mDaysPassed, color;
     private final Display mDisplay;
@@ -36,9 +38,15 @@ public class CustomAdapter extends ArrayAdapter<Mood>{
     private String moodDate;
     private TextView mTextView;
     private View customView;
+    private SharedPreferences mPreferences;
 
-    public CustomAdapter(Context context, List<Mood> moodLog){
-        super(context, R.layout.history_custom_row, moodLog);
+public static final String PREF_FILE_NAME = "mood";
+
+public static final String PREF_KEY_MOOD = "PREF_KEY_MOOD";
+
+
+    public Adapter(Context context, List<Mood> moodLog){
+        super(context, R.layout.history_layout, moodLog);
         mDisplay = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
         deviceDisplay = new Point();
         mDisplay.getSize(deviceDisplay);
@@ -46,14 +54,13 @@ public class CustomAdapter extends ArrayAdapter<Mood>{
         deviceHeight = deviceDisplay.y;
     }
 
-    @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         moodInflater = LayoutInflater.from(getContext());
-        customView = moodInflater.inflate(R.layout.history_custom_row, parent, false);
+        customView = moodInflater.inflate(R.layout.history_layout, parent, false);
         singleMood = getItem(position);
 
-        mTextView = (TextView)customView.findViewById(R.id.history_row_textview);
+        mTextView = (TextView)customView.findViewById(R.id.history_textview);
         mTextView.setText(getMoodDate(singleMood));
 
         mImageButton = (ImageButton)customView.findViewById(R.id.note_button);
@@ -125,3 +132,4 @@ public class CustomAdapter extends ArrayAdapter<Mood>{
         }
     }
 }
+
