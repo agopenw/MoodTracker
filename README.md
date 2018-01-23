@@ -17,6 +17,8 @@ How to use / modify these files?
 
 
 Do you want test this app on a virtual device in Android Studio? Let's go!
+
+
 (If you don't have virtual device installed, create one with this easy tutorial: https://developer.android.com/studio/run/managing-avds.html#createavd)
 
 And...
