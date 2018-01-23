@@ -44,7 +44,7 @@ public static final String PREF_FILE_NAME = "mood";
 
 public static final String PREF_KEY_MOOD = "PREF_KEY_MOOD";
 
-
+    //Determine the size of the device screen
     public Adapter(Context context, List<Mood> moodLog){
         super(context, R.layout.history_layout, moodLog);
         mDisplay = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
@@ -59,10 +59,10 @@ public static final String PREF_KEY_MOOD = "PREF_KEY_MOOD";
         moodInflater = LayoutInflater.from(getContext());
         customView = moodInflater.inflate(R.layout.history_layout, parent, false);
         singleMood = getItem(position);
-
+        //Date of the day in HistoryActivity
         mTextView = (TextView)customView.findViewById(R.id.history_textview);
         mTextView.setText(getMoodDate(singleMood));
-
+        //Add the note button if a comment is saved with the mood
         mImageButton = (ImageButton)customView.findViewById(R.id.note_button);
         final String note = singleMood.getNote();
         if (note != null){
@@ -74,7 +74,7 @@ public static final String PREF_KEY_MOOD = "PREF_KEY_MOOD";
                 }
             });
         }
-
+        //set the height, width and color of the mood bar in HistoryActivity
         rowLayout = (RelativeLayout)customView.findViewById(R.id.Row_layout);
         moodPos = singleMood.getMood();
         height = deviceHeight/7;
@@ -104,7 +104,7 @@ public static final String PREF_KEY_MOOD = "PREF_KEY_MOOD";
 
         return customView;
     }
-
+    //Getview can use the dates
     private String getMoodDate(Mood mood){
         mDaysPassed = mood.getDate();
 
@@ -117,12 +117,13 @@ public static final String PREF_KEY_MOOD = "PREF_KEY_MOOD";
         } else if (mDaysPassed == 7){
             moodDate = "Il y a une semaine";
         } else {
-            moodDate = "Il y a plus d'une semaine";
+            moodDate = "Il y a plus longtemps";
         }
 
         return moodDate;
     }
 
+    //Resize the line for a good display
     private void resizeView(View view, int newWidth, int newHeight){
         try{
             Constructor<? extends ViewGroup.LayoutParams> ctor = view.getLayoutParams().getClass().getDeclaredConstructor(int.class, int.class);

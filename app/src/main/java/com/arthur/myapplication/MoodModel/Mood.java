@@ -38,7 +38,7 @@ public class Mood implements Serializable {
     public String toString() {
         return "Mood position: "+mood+", day of the year: "+date+" note: "+note;
     }
-
+    //compare the dates previously saved
     public static Comparator<Mood> moodDayComparator = new Comparator<Mood>() {
         @Override
         public int compare(Mood o1, Mood o2) {

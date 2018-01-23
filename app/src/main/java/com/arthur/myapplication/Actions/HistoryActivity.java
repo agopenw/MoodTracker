@@ -39,6 +39,7 @@ public class HistoryActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
+        //Moodlog
         mFolder = new File(getFilesDir() + "/mood");
         if (!mFolder.exists()){
             mFolder.mkdir();
@@ -46,12 +47,13 @@ public class HistoryActivity extends AppCompatActivity {
         moodFile = new File(mFolder.getAbsolutePath() + "/moodLog1.dat");
         ser = new Manage();
         moodLog = ser.deserialize(moodFile);
-
+        //Check if the moodlog is empty
         if(!moodLog.isEmpty()){
             mAdapter = new Adapter(this, moodLog);
             mListView = (ListView)findViewById(R.id.history_listview);
             mListView.setAdapter(mAdapter);
         } else {
+            //If the Moodlog is empty, display a message
             mTextView = (TextView)findViewById(R.id.empty_list);
             mTextView.setVisibility(View.VISIBLE);
         }

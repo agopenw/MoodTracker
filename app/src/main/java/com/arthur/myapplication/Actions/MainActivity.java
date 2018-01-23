@@ -25,17 +25,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private ImageButton mAddNote, mHistory;
     private SwipeAdapter mAdapter;
-    private EditText mEditText;
-    private File mFolder, moodFile;
+    private ImageButton mAddNote, mHistory;
     private int mCurrentMood;
     private List<Mood> moodLog = new ArrayList<>();
-    private Mood newMood;
     private String mCurrentMoodNote, mNote, mCurrentDay, mCurrentMoodDay;
+    private File mFolder, moodFile;
+    private Mood newMood;
     private VerticalViewPager mViewPager;
-    private Manage serial;
+    private EditText mEditText;
     private Preference userPref;
+    private Manage serial;
 
     public static final String BUNDLE_STATE_MOOD = "usersMood";
     public static final String BUNDLE_STATE_NOTE = "usersNote";
@@ -49,10 +49,13 @@ public class MainActivity extends AppCompatActivity {
                 mAdapter = new SwipeAdapter(this);
                 mViewPager.setAdapter(mAdapter);
 
+                //check the previous saved mood
                 mCurrentDay = new LocalDate().toString();
 
+                //load last mood selected
                 userPref = new Preference(this);
                 if(savedInstanceState != null) {
+                //stop other moods
                     mCurrentMood = savedInstanceState.getInt(BUNDLE_STATE_MOOD);
                     mCurrentMoodNote = savedInstanceState.getString(BUNDLE_STATE_NOTE);
                     mCurrentMoodDay = savedInstanceState.getString(BUNDLE_STATE_DAY);
@@ -64,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         System.out.println("CurrentMoodDay: "+mCurrentMoodDay +" CurrentDay: "+mCurrentDay);
-
+        //save the mood of the previous day
         LocalDate sDate = new LocalDate(LocalDate.parse(mCurrentMoodDay));
         LocalDate cDate = new LocalDate(LocalDate.parse(mCurrentDay));
         Period period = new Period(sDate, cDate);
@@ -89,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 mViewPager.setCurrentItem(mCurrentMood);
                 mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
+        //Add a new content in the app MoodTracker : sounds when you change your mood w/MediaPlayer
                     @Override
                     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                     }
@@ -123,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAddNote =(ImageButton)findViewById(R.id.add_note);
         mAddNote.setOnClickListener(new View.OnClickListener() {
-
+        //display a window to insert a comment when the user use the button "note"
             @Override public void onClick(View v) {
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             View mView = getLayoutInflater().inflate(R.layout.note_layout, null);
@@ -132,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
+               //confirm the notes has been saved + displays its contents
                     mNote = mEditText.getText().toString();
                     if(!mNote.isEmpty()){
                         Toast.makeText(MainActivity.this,
@@ -156,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
             mHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //the "history button" open the HistoryActivity
                 Intent historyActivity = new Intent(MainActivity.this, HistoryActivity.class);
                 startActivity(historyActivity);
             }
@@ -163,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-
+    //save the current data
         outState.putInt(BUNDLE_STATE_MOOD, mCurrentMood);
         outState.putString(BUNDLE_STATE_NOTE, mCurrentMoodNote);
         outState.putString(BUNDLE_STATE_DAY, mCurrentMoodDay);
@@ -173,6 +179,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
+        //when the app is closed, save the mood of the day (moodItem)
+        //save the date and save the note
         int moodItem = mViewPager.getCurrentItem();
         userPref.setMoodPref(moodItem);
         String date = new LocalDate().toString();
