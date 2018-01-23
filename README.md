@@ -2,7 +2,8 @@
 Projet n°3 : Mémorisez votre humeur du jour
 
 **This app has been developped for a school project (OpenClassroom)**
-**3rd Project of Android Software Development**
+
+*3rd Project of Android Software Development*
 
 
 
