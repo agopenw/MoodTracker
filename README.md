@@ -25,7 +25,7 @@ Do you want test this app on a virtual device in Android Studio? Let's go!
 And...
 1. Just press ▶ "Run app" (or Maj+F10).
 2. Wait few seconds.
-3. Enjoy.
+3. Save your mood :)
 
 
 MoodTracker : save your daily mood!
