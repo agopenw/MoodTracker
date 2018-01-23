@@ -24,7 +24,7 @@ Do you want test this app on a virtual device in Android Studio? Let's go!
 
 And...
 1. Just press ▶ "Run app" (or Maj+F10).
-2. Wait few second.
+2. Wait few seconds.
 3. Enjoy.
 
 
