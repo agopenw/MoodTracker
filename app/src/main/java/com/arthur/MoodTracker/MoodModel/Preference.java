@@ -1,4 +1,4 @@
-package com.arthur.myapplication.MoodModel;
+package com.arthur.MoodTracker.MoodModel;
 
 import android.content.Context;
 import android.content.SharedPreferences;

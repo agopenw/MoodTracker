@@ -1,6 +1,6 @@
 //The app MoodTracker use this class for the vertical swipe
 
-package com.arthur.myapplication.VerticalView;
+package com.arthur.MoodTracker.VerticalView;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

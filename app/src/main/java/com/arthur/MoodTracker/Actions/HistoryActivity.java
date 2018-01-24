@@ -1,4 +1,4 @@
-package com.arthur.myapplication.Actions;
+package com.arthur.MoodTracker.Actions;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +7,10 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.arthur.myapplication.VerticalView.Adapter;
-import com.arthur.myapplication.R;
-import com.arthur.myapplication.MoodModel.Mood;
-import com.arthur.myapplication.MoodModel.Manage;
+import com.arthur.MoodTracker.VerticalView.Adapter;
+import com.arthur.MoodTracker.R;
+import com.arthur.MoodTracker.MoodModel.Mood;
+import com.arthur.MoodTracker.MoodModel.Manage;
 
 import java.io.File;
 import java.io.FileInputStream;

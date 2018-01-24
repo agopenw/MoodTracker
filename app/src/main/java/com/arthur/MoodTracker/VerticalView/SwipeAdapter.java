@@ -1,6 +1,6 @@
 //In this class, images,color backgrounds are defined in good order
 
-package com.arthur.myapplication.VerticalView;
+package com.arthur.MoodTracker.VerticalView;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.arthur.myapplication.R;
+import com.arthur.MoodTracker.R;
 
 //Here, mood with background color
 public class SwipeAdapter extends PagerAdapter {

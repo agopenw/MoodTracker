@@ -1,4 +1,4 @@
-package com.arthur.myapplication.Actions;
+package com.arthur.MoodTracker.Actions;
 
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -12,12 +12,12 @@ import android.os.Bundle;
 import android.content.DialogInterface;
 import android.content.Intent;
 
-import com.arthur.myapplication.MoodModel.Preference;
-import com.arthur.myapplication.VerticalView.VerticalViewPager;
-import com.arthur.myapplication.R;
-import com.arthur.myapplication.VerticalView.SwipeAdapter;
-import com.arthur.myapplication.MoodModel.Manage;
-import com.arthur.myapplication.MoodModel.Mood;
+import com.arthur.MoodTracker.MoodModel.Preference;
+import com.arthur.MoodTracker.VerticalView.VerticalViewPager;
+import com.arthur.MoodTracker.R;
+import com.arthur.MoodTracker.VerticalView.SwipeAdapter;
+import com.arthur.MoodTracker.MoodModel.Manage;
+import com.arthur.MoodTracker.MoodModel.Mood;
 import org.joda.time.LocalDate;
 import org.joda.time.Period;
 import java.io.File;

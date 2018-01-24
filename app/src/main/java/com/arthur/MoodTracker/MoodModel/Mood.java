@@ -1,4 +1,4 @@
-package com.arthur.myapplication.MoodModel;
+package com.arthur.MoodTracker.MoodModel;
 
 import java.io.Serializable;
 import java.util.Comparator;

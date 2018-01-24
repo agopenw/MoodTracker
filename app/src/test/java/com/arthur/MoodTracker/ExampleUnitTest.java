@@ -1,4 +1,4 @@
-package com.arthur.myapplication;
+package com.arthur.MoodTracker;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.arthur.myapplication.VerticalView;
+package com.arthur.MoodTracker.VerticalView;
 
 
 import android.content.Context;
@@ -18,8 +18,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.arthur.myapplication.MoodModel.Mood;
-import com.arthur.myapplication.R;
+import com.arthur.MoodTracker.MoodModel.Mood;
+import com.arthur.MoodTracker.R;
 
 
 import java.lang.reflect.Constructor;

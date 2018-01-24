@@ -1,4 +1,4 @@
-package com.arthur.myapplication.MoodModel;
+package com.arthur.MoodTracker.MoodModel;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,7 +11,7 @@ import java.io.ObjectOutputStream;
 import java.util.Iterator;
 import java.util.List;
 
-import static com.arthur.myapplication.MoodModel.Mood.moodDayComparator;
+import static com.arthur.MoodTracker.MoodModel.Mood.moodDayComparator;
 
 public class Manage {
     private FileInputStream fis;

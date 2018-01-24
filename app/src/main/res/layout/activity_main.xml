@@ -6,13 +6,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.arthur.myapplication.Actions.MainActivity">
+    tools:context="com.arthur.MoodTracker.Actions.MainActivity">
 
-    <com.arthur.myapplication.VerticalView.VerticalViewPager
+    <com.arthur.MoodTracker.VerticalView.VerticalViewPager
         android:id="@+id/view_pager"
         android:layout_height="match_parent"
         android:layout_width="match_parent">
-    </com.arthur.myapplication.VerticalView.VerticalViewPager>
+    </com.arthur.MoodTracker.VerticalView.VerticalViewPager>
 
     <ImageButton
         android:id="@+id/add_note"
