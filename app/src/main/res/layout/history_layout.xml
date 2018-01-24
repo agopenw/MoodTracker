@@ -26,6 +26,6 @@
         android:layout_marginTop="50dp"
         android:visibility="gone"
         android:background="@android:color/transparent"
-        android:src="@drawable/ic_note_add_black"/>
+        android:src="@drawable/ic_comment_black_48px"/>
 
 </RelativeLayout>
