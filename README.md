@@ -1,5 +1,6 @@
 # MoodTracker
 Projet n°3 : Mémorisez votre humeur du jour
+Enregistrez votre humeur du jour tout en en la commentant et en ayant accès à votre historique hebdomadaire.
 
 
 **This app has been developped for a school project (OpenClassroom)**
