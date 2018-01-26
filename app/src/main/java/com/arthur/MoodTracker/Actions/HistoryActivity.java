@@ -7,9 +7,9 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.arthur.MoodTracker.MoodModel.Serialize;
 import com.arthur.MoodTracker.VerticalView.Adapter;
 import com.arthur.MoodTracker.R;
-import com.arthur.MoodTracker.MoodModel.Mood;
 import com.arthur.MoodTracker.MoodModel.Manage;
 
 import java.io.File;
@@ -25,7 +25,7 @@ public class HistoryActivity extends AppCompatActivity {
     private File mFolder, moodFile;
     private FileInputStream fis;
     private FileOutputStream fos;
-    private List<Mood> moodLog;
+    private List<Serialize> moodLog;
     private ObjectInputStream mInputStream;
     private ObjectOutputStream mOutputStream;
     private ListAdapter mAdapter;

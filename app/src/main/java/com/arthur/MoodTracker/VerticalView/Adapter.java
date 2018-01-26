@@ -18,7 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.arthur.MoodTracker.MoodModel.Mood;
+import com.arthur.MoodTracker.MoodModel.Serialize;
 import com.arthur.MoodTracker.R;
 
 
@@ -26,13 +26,13 @@ import java.lang.reflect.Constructor;
 import java.util.List;
 
 
-public class Adapter extends ArrayAdapter<Mood>{
+public class Adapter extends ArrayAdapter<Serialize>{
 
     private int rowWidth, width, deviceWidth, height, deviceHeight, moodPos, mDaysPassed, color;
     private final Display mDisplay;
     private LayoutInflater moodInflater;
     private ImageButton mImageButton;
-    private Mood singleMood;
+    private Serialize singleMood;
     private Point deviceDisplay;
     private RelativeLayout rowLayout;
     private String moodDate;
@@ -45,7 +45,7 @@ public static final String PREF_FILE_NAME = "mood";
 public static final String PREF_KEY_MOOD = "PREF_KEY_MOOD";
 
     //Determine the size of the device screen
-    public Adapter(Context context, List<Mood> moodLog){
+    public Adapter(Context context, List<Serialize> moodLog){
         super(context, R.layout.history_layout, moodLog);
         mDisplay = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
         deviceDisplay = new Point();
@@ -105,7 +105,7 @@ public static final String PREF_KEY_MOOD = "PREF_KEY_MOOD";
         return customView;
     }
     //Getview can use the dates
-    private String getMoodDate(Mood mood){
+    private String getMoodDate(Serialize mood){
         mDaysPassed = mood.getDate();
 
         if (mDaysPassed == 1) {

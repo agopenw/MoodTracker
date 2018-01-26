@@ -11,24 +11,24 @@ import java.io.ObjectOutputStream;
 import java.util.Iterator;
 import java.util.List;
 
-import static com.arthur.MoodTracker.MoodModel.Mood.moodDayComparator;
+import static com.arthur.MoodTracker.MoodModel.Serialize.moodDayComparator;
 
 public class Manage {
     private FileInputStream fis;
     private FileOutputStream fos;
     private ObjectOutputStream mOutputStream;
     private ObjectInputStream mInputStream;
-    private List<Mood> moodLog;
+    private List<Serialize> moodLog;
 
     public void Serialize(){};
 
-    public void serialize (List<Mood> moodLog, Mood md, File moodFile) {
+    public void serialize (List<Serialize> moodLog, Serialize md, File moodFile) {
         try{
             FileOutputStream fos = new FileOutputStream(moodFile);
             mOutputStream = new ObjectOutputStream(fos);
 
-            for (Iterator<Mood> it = moodLog.iterator(); it.hasNext(); ){
-                Mood nextMd = it.next();
+            for (Iterator<Serialize> it = moodLog.iterator(); it.hasNext(); ){
+                Serialize nextMd = it.next();
                 int newDate = nextMd.getDate() + md.getDate();
                 nextMd.setDate(newDate);
             }
@@ -56,13 +56,13 @@ public class Manage {
         }
     }
 
-    public List<Mood> deserialize(File moodFile){
+    public List<Serialize> deserialize(File moodFile){
         if(moodFile.exists()){
             try{
                 fis = new FileInputStream(moodFile);
                 mInputStream = new ObjectInputStream(fis);
 
-                moodLog = (ArrayList<Mood>) mInputStream.readObject();
+                moodLog = (ArrayList<Serialize>) mInputStream.readObject();
             } catch (IOException | ClassNotFoundException e){
                 e.printStackTrace();
             }

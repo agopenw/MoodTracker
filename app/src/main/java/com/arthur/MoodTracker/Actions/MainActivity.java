@@ -13,11 +13,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 
 import com.arthur.MoodTracker.MoodModel.Preference;
+import com.arthur.MoodTracker.MoodModel.Serialize;
 import com.arthur.MoodTracker.VerticalView.VerticalViewPager;
 import com.arthur.MoodTracker.R;
 import com.arthur.MoodTracker.VerticalView.SwipeAdapter;
 import com.arthur.MoodTracker.MoodModel.Manage;
-import com.arthur.MoodTracker.MoodModel.Mood;
+
 import org.joda.time.LocalDate;
 import org.joda.time.Period;
 import java.io.File;
@@ -28,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
     private SwipeAdapter mAdapter;
     private ImageButton mAddNote, mHistory;
     private int mCurrentMood;
-    private List<Mood> moodLog = new ArrayList<>();
+    private List<Serialize> moodLog = new ArrayList<>();
     private String mCurrentMoodNote, mNote, mCurrentDay, mCurrentMoodDay;
     private File mFolder, moodFile;
-    private Mood newMood;
+    private Serialize newMood;
     private VerticalViewPager mViewPager;
     private EditText mEditText;
     private Preference userPref;
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             serial = new Manage();
             moodLog = serial.deserialize(moodFile);
 
-            newMood = new Mood(mCurrentMood, deltaDays, mCurrentMoodNote);
+            newMood = new Serialize(mCurrentMood, deltaDays, mCurrentMoodNote);
             serial.serialize(moodLog, newMood, moodFile);
 
             mCurrentMood = 2;

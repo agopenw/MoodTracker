@@ -3,16 +3,17 @@ package com.arthur.MoodTracker.MoodModel;
 import java.io.Serializable;
 import java.util.Comparator;
 
-public class Mood implements Serializable {
+//Create a Serializable class
+public class Serialize implements Serializable {
     private String note;
     private int date, mood;
 
     private static final long serialVersionUID = 1L;
 
-    public Mood(){
+    public Serialize(){
     }
 
-    public Mood(int mood, int date, String note){
+    public Serialize(int mood, int date, String note){
         this.mood = mood;
         this.date = date;
         this.note = note;
@@ -36,12 +37,12 @@ public class Mood implements Serializable {
 
     @Override
     public String toString() {
-        return "Mood position: "+mood+", day of the year: "+date+" note: "+note;
+        return "Serialize position: "+mood+", day of the year: "+date+" note: "+note;
     }
     //compare the dates previously saved
-    public static Comparator<Mood> moodDayComparator = new Comparator<Mood>() {
+    public static Comparator<Serialize> moodDayComparator = new Comparator<Serialize>() {
         @Override
-        public int compare(Mood o1, Mood o2) {
+        public int compare(Serialize o1, Serialize o2) {
             int moodDay1 = o1.getDate();
             int moodDay2 = o2.getDate();
 
