@@ -4,7 +4,7 @@ Projet n°3 : Mémorisez votre humeur du jour
 
 Enregistrez votre humeur du jour tout en la commentant et en ayant accès à votre historique hebdomadaire.
 
-Présentation de l'application en document PDF ici : https://github.com/agopenw/MoodTracker/blob/master/PDF%20Pr%C3%A9sentation%20MT.pdf
+Présentation de l'application en document PDF : https://github.com/agopenw/MoodTracker/blob/master/PDF%20Pr%C3%A9sentation%20MT.pdf
 
 
 **This app has been developped for a school project (OpenClassroom)**
