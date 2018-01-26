@@ -170,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-    //save the current data
+    //save the current data of the app
         outState.putInt(BUNDLE_STATE_MOOD, mCurrentMood);
         outState.putString(BUNDLE_STATE_NOTE, mCurrentMoodNote);
         outState.putString(BUNDLE_STATE_DAY, mCurrentMoodDay);
